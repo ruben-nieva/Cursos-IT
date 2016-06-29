@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--/*/ <th:block th:include="layout/header :: head"/> /*/-->
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+    <br/><br/><br/><br/><br/>
+        <div class="box col-md-6 col-md-offset-3">
+            <div class="stormpath-header">
+                <img src="/images/Page-not-found-10.jpg"/>
+            </div>
+            <div class="logo">
+                <h1 th:text="${errors.status}"></h1>
+            </div>
+            <p class="lead text-muted" th:text="${errors.message}">Unauthorized</p>
+            <a href="/" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

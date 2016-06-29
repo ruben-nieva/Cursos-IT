@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>    
+  
+  <th:block th:include="layout/headerinc :: head"></th:block> 
+	
+  <title th:title-pattern="${CONTENT_TITLE $DECORATOR_TITLE}"> :: Cursos-IT</title> 	
+
+</head>
+    
+<body>
+
+   <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="/" th:href="@{/}">Instituto</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+              	<li><a href="/courses" th:href="@{/}">Calendario</a></li>
+                <li><a href="#" th:href="@{/}">Alumnos</a></li>
+                <li><a href="#" th:href="@{/}">Promociones</a></li>
+                <li><a href="#" th:href="@{/}">Empleos</a></li>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cursos <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-header">Base de Datos</li>
+                    <li><a href="#" th:href="@{#}">Curso #1</a></li>
+                    <li><a href="#" th:rhef="@{/addStudent}">Curso #2</a></li>
+                    <li><a href="#">Curso #3</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Programacion</li>
+                    <li><a href="#">Curso #4</a></li>
+                    <li><a href="#">Curso #5</a></li>
+                  </ul>
+                  
+                </li>
+              </ul>
+              
+              <ul class="nav navbar-nav navbar-right">
+		       	<li class="active"><a href="/admin">Login</a></li>
+		      </ul>
+              
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    
+    <div th:replace="layout/carousel :: 'carousel'">&nbsp;</div>    
+    
+	
+	<!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="/images/image-curso-006.jpg" alt="Generic placeholder image" width="140" height="140" />
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="/images/image-curso-003.jpg" alt="Generic placeholder image" width="140" height="140" />
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="/images/image-curso-004.jpg" alt="Generic placeholder image" width="140" height="140" />
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-1.12.4.min.js" 
+    	th:href="@{/js/jquery-1.12.4.min.js}"></script>
+    <script src="/js/bootstrap.min.js" 
+    	th:href="@{/js/js/bootstrap.min.js}"></script>
+    
+    
+   <br/> <br/> <br/> <br/> 
+
+ </body>
+ 
+ <!--  FOOTER  -->
+ <footer>
+    	 <div th:replace="layout/footer :: 'footer'">&copy; 2016 The Static Templates</div>
+ </footer>
+        
+</html>
