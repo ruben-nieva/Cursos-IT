@@ -6,7 +6,6 @@
 	<groupId>cursos-it</groupId>
 	<artifactId>cursos-it</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<name>Cursos-IT</name>
 	<description>Cursos IT with Spring</description>
