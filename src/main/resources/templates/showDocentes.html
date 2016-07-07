@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	  
+  <head>
+    <th:block th:include="layout/headerinc :: head"></th:block>	
+  </head>
+  
+   <body>     
+     <!-- INIT CONTENT -->
+     <div th:replace="layout/tabs :: 'menu-admin'">&nbsp;</div>
+     
+    <!-- INIT CONTENT -->
+    <div>
+    <div class="container">    
+    <br/><br/><br/><br/><br/><br/>
+
+	<div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Platilla de Docentes</h4>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+
+                        <div th:unless="${#lists.isEmpty(listadeDocentes)}">
+                            <table class="table table-striped table-hover ">
+                                <thead>
+                                <tr class="info">
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>DNI</th>
+                                    <th>Telefono</th>
+                                    <th>Accion</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="d : ${listadeDocentes}">
+                                    <td th:text="${#strings.substring(d.idDocente,20,24)}">ID</td>
+                                    <td th:text="${d.nombre}">NOMBRE</td>
+                                    <td th:text="${d.apellido}">APELLIDO</td>
+                                    <td th:text="${d.dni}">DNI</td>
+                                    <td th:text="${d.telefono}">TELEFONO</td>
+                                    <td>
+                                    	<a th:href="@{#}">Ver</a><a> /</a>
+                                    	<a th:href="@{#}">Borrar</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <a th:href="@{#}" class="pull-right btn btn-primary">Agregar Docente</a>
+                </div>
+            </div> 
+    
+    </div>
+    
+   <!-- FIN CONTENT -->
+   </div>
+    
+    
+  </body>
+</html>
+  
+
+

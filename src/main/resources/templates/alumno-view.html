@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	  
+  <head>
+    <th:block th:include="layout/headerinc :: head"></th:block>
+	
+	<title>Courses:Info Alumnos</title>
+	
+  </head>
+  
+    <body>
+  
+    <div th:replace="layout/tabs :: 'menu-admin'">&nbsp;</div>
+    
+    <!-- INIT CONTENT -->
+    
+    <div class="container">    
+    <br/><br/><br/><br/><br/>
+    
+    <div class="form-group modal-header">
+         <h3 class="modal-title" th:text="${alumno.NombreyApellido}">Course</h3>        
+    </div>     
+    
+       <div class="modal-body">
+
+		<form class="form-horizontal" role="form">		  
+		  
+		  <div class="form-group">
+             <label class="col-sm-2 control-label">DNI:</label>
+             <div class="col-sm-10">
+               <p class="form-control-static" th:text="${alumno.dni}">Description</p></div>
+          </div>
+          
+          <div class="form-group">
+             <label class="col-sm-2 control-label">Telefono:</label>
+             <div class="col-sm-10">
+               <p class="form-control-static" th:text="${alumno.telefono}">Instructor</p></div>
+               
+          </div>
+          
+          <div class="form-group">
+             <label class="col-sm-2 control-label">Direccion:</label>
+             <div class="col-sm-10">
+               <p class="form-control-static">Calle Falsa 123</p></div>
+          </div>
+          
+          <div class="form-group">
+             <label class="col-sm-2 control-label">Fecha Nacimiento:</label>
+             <div class="col-sm-10">
+               <p class="form-control-static" th:text="${#calendars.format(alumno.fechaNacimiento,'dd/MM/yyyy')}">DD/MM/YYYY</p></div>
+          </div>         
+		  
+		  <div class="form-group">
+             <label class="col-sm-2 control-label">Cursos:</label>
+             <div class="col-sm-10">
+               <p class="form-control-static" >Cursos que esta realiazando el alumno</p></div>
+          </div>     
+                    
+		  
+		</form>   
+		
+		 </div>
+		 <div class="modal-footer">
+             <a th:href="@{'/listStudents/' + ${idCurso}}" class="pull-right btn btn-primary">Volver</a>
+             <p th:href="@{'#'}"  class="pull-right btn btn-danger btn-xm">Editar</p>
+         </div>
+    
+    </div>
+    
+   <!-- FIN CONTENT -->
+
+    
+  </body>
+</html>
+  
+
+
